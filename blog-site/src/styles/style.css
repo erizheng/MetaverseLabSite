@@ -1,0 +1,332 @@
+/* 1. Common settings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 1) 55%,
+    rgba(241, 235, 255, 1) 100%
+  );
+  font-family: "DM Sans-Regular", Helvetica, Arial, sans-serif;
+  color: #333333;
+  overflow-x: hidden;
+}
+
+
+/* 2. Top-level container */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+/* 3. Header */
+.header {
+  width: 100%;
+  background-color: #f2eaff;
+  box-shadow: 0 2px 4px rgba(104, 64, 198, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+/* Global Blog */
+.logo-link {
+  font-family: "DM Sans-Bold", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo-link:hover {
+  color: #e0e0e0;
+}
+
+/* Navigation menu */
+.nav-menu {
+  justify-content: space-between;
+}
+
+.nav-menu .nav-list {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+}
+
+.nav-menu .nav-link {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.nav-menu .nav-link:hover {
+  color: #e0e0e0;
+}
+
+/* Newsletter button */
+.newsletter-btn {
+  background-color: #6840c6;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+/* 4. Introduction section */
+.intro-section {
+  width: 100%;
+  max-width: 800px;
+  padding: 40px 20px;
+  text-align: left;
+  margin: 60px auto;
+}
+
+.intro-text {
+  font-size: 18px;
+  color: #333333;
+  font-family: "DM Sans-Regular", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 16px 0 0 40px;
+}
+
+/* “What is the GLOBAL BLOG?” */
+.intro-heading {
+  margin: 50px 0 0 20px;
+}
+
+.section-heading {
+  margin-top: 40px;
+}
+
+
+/* 5. Recent Blog Posts */
+.content-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 80px;
+}
+
+.section-heading {
+  font-family: "DM Sans-SemiBold", Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  color: #000000;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
+  margin-bottom: 24px;
+}
+
+/* Posts-grid: a large card on left, 2 small cards on the right */
+.posts-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Left card */
+.post-card-large {
+  background-color: var(--basicwhite);
+  border-radius: 12px;
+  box-shadow: var(--drop-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.post-card-large .post-card-image {
+  width: 100%;
+  height: 360px;
+  background-color: #e0e0e0;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-card-large .post-card-content {
+  padding: 20px;
+}
+
+.post-card-large .post-date {
+  font-size: 16px;
+  color: #9f82e2;
+  margin: 0 0 8px;
+  font-family: "DM Sans-SemiBold", Helvetica, Arial, sans-serif;
+}
+
+.post-card-large .post-title {
+  font-size: 24px;
+  color: #000000;
+  margin: 0 0 12px;
+  font-family: "DM Sans-SemiBold", Helvetica, Arial, sans-serif;
+}
+
+.post-card-large .post-excerpt {
+  font-size: 16px;
+  color: #333333;
+  margin: 0 0 16px;
+  font-family: "DM Sans-Regular", Helvetica, Arial, sans-serif;
+}
+
+.post-card-large .read-more {
+  font-size: 14px;
+  color: #6840c6;
+  text-decoration: underline;
+  font-family: "DM Sans-SemiBold", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+/* Right card */
+.right-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.post-card-small {
+  background-color: var(--basicwhite);
+  border-radius: 12px;
+  box-shadow: var(--drop-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.post-card-small .post-card-image {
+  width: 100%;
+  height: 140px;
+  background-color: #e0e0e0;
+  object-fit: cover;
+}
+
+.post-card-small .post-card-content {
+  padding: 16px;
+}
+
+.post-card-small .post-date {
+  font-size: 14px;
+  color: #9f82e2;
+  margin: 0 0 6px;
+  font-family: "DM Sans-SemiBold", Helvetica, Arial, sans-serif;
+}
+
+.post-card-small .post-title {
+  font-size: 18px;
+  color: #000000;
+  margin: 0 0 8px;
+  font-family: "DM Sans-SemiBold", Helvetica, Arial, sans-serif;
+}
+
+.post-card-small .post-excerpt {
+  font-size: 14px;
+  color: #333333;
+  margin: 0 0 12px;
+  font-family: "DM Sans-Regular", Helvetica, Arial, sans-serif;
+}
+
+.post-card-small .read-more {
+  font-size: 14px;
+  color: #6840c6;
+  text-decoration: underline;
+  font-family: "DM Sans-SemiBold", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+
+/* 6. Footer */
+.footer {
+  width: 100%;
+  background-color: #000000;
+  padding: 20px 0;
+  text-align: center;
+  font-family: "DM Sans-Regular", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: auto;
+}
+
+.footer-text {
+  margin: 0;
+  color: #CCCCCC;
+}
+
+
+/* 7. Responsive */
+/* When the screen width is below 768px */
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .nav-menu .nav-list {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .newsletter-btn {
+    margin-top: 8px;
+  }
+
+  .content-wrapper {
+    padding: 20px;
+  }
+
+  .section-heading {
+    font-size: 28px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .posts-grid {
+    display: flex;
+    flex-direction: column; /* Stacking vertically on a small screen */
+    gap: 24px;
+  }
+
+  .post-card-large .post-card-image {
+    height: 240px;
+  }
+
+  .post-card-small .post-card-image {
+    height: 180px;
+  }
+
+  .about-section {
+    padding: 20px;
+  }
+}
